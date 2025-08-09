@@ -16,3 +16,4 @@ final redColor = const Color(0xFFE44C2E);
 final greyColor = const Color(0xFF777777);
 final darkGreyColor = const Color(0xFF333333);
 final lightGreyColor = const Color(0xFFB0B0B0);
+final greyColor2 = const Color(0xFF9A9A9A);
