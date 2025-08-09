@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:krypt_mobile/UI/screens/tokens/receive_screen.dart';
 import 'package:krypt_mobile/UI/widgets/appbar.dart';
 import 'package:krypt_mobile/UI/widgets/buttons.dart';
 import 'package:krypt_mobile/UI/widgets/colors.dart';
@@ -75,6 +76,12 @@ class _TokenScreenState extends State<TokenScreen> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       ActionButton(
+                        onTap: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const ReceiveScreen(),
+                          ),
+                        ),
                         height: 65.h,
                         width: 100.w,
                         label: 'Receive',
@@ -138,12 +145,8 @@ class _TokenScreenState extends State<TokenScreen> {
                     ],
                   ),
                   SizedBox(height: 10.h),
-                  CustomTextWidget(
-                    text: 'Some additional information about your position.',
-                    fontSize: 14.sp,
-                    color: textColor2,
-                    fontWeight: FontWeight.normal,
-                  ),
+                  InfoWidget(),
+                  SizedBox(height: 40.h),
                 ],
               ),
             ),

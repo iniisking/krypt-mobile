@@ -25,6 +25,9 @@ class $AssetsImagesGen {
   AssetGenImage get clockOutline =>
       const AssetGenImage('assets/images/clock outline.png');
 
+  /// File path: assets/images/copy.png
+  AssetGenImage get copy => const AssetGenImage('assets/images/copy.png');
+
   /// File path: assets/images/ethereum.png
   AssetGenImage get ethereum =>
       const AssetGenImage('assets/images/ethereum.png');
@@ -65,6 +68,7 @@ class $AssetsImagesGen {
     bitcoin,
     clockFill,
     clockOutline,
+    copy,
     ethereum,
     homeFill,
     homeOutline,

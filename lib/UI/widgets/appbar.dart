@@ -115,3 +115,36 @@ class TokenScreenAppBar extends StatelessWidget implements PreferredSizeWidget {
     );
   }
 }
+
+class ReceiveScreenAppbar extends StatelessWidget
+    implements PreferredSizeWidget {
+  const ReceiveScreenAppbar({super.key});
+  @override
+  Size get preferredSize => Size.fromHeight(40.h);
+
+  @override
+  Widget build(BuildContext context) {
+    return AppBar(
+      automaticallyImplyLeading: false,
+      elevation: 0,
+      backgroundColor: backgroundColor,
+      title: Row(
+        // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          GestureDetector(
+            onTap: () => Navigator.pop(context),
+            child: Icon(CupertinoIcons.back, color: Colors.white, size: 20.sp),
+          ),
+          SizedBox(width: 12.w),
+
+          CustomTextWidget(
+            text: 'Your Bitcoin Address',
+            fontSize: 16.sp,
+            color: textColor1,
+            fontWeight: FontWeight.bold,
+          ),
+        ],
+      ),
+    );
+  }
+}
