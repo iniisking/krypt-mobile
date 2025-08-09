@@ -27,7 +27,7 @@ class MainScreen extends StatelessWidget {
       body: IndexedStack(index: navProvider.currentIndex, children: _screens),
       bottomNavigationBar: Container(
         color: backgroundColor,
-        height: 90.h,
+        height: 75.h,
         child: Stack(
           children: [
             // Sliding underline
@@ -59,7 +59,7 @@ class MainScreen extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        SizedBox(height: 10.h),
+                        SizedBox(height: 15.h),
                         navProvider.currentIndex == 0
                             ? Assets.images.homeFill.image(
                                 width: 28.w,
@@ -82,7 +82,7 @@ class MainScreen extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        SizedBox(height: 10.h),
+                        SizedBox(height: 15.h),
                         navProvider.currentIndex == 1
                             ? Assets.images.clockFill.image(
                                 width: 28.w,
@@ -105,7 +105,7 @@ class MainScreen extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        SizedBox(height: 10.h),
+                        SizedBox(height: 15.h),
                         navProvider.currentIndex == 2
                             ? Assets.images.profileFill.image(
                                 width: 28.w,

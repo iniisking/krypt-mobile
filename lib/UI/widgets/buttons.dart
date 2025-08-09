@@ -20,7 +20,7 @@ class ActionButton extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        height: 80.h,
+        height: 78.h,
         width: 120.w,
         decoration: BoxDecoration(
           color: primaryColor,

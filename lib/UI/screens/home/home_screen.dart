@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:krypt_mobile/UI/screens/tokens/token_screen.dart';
 import 'package:krypt_mobile/UI/widgets/appbar.dart';
 import 'package:krypt_mobile/UI/widgets/buttons.dart';
 import 'package:krypt_mobile/UI/widgets/colors.dart';
@@ -13,12 +14,13 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: backgroundColor,
-      appBar: CustomAppbar(),
+      appBar: HomeAppbar(),
       body: Column(
         children: [
+          //BALANCE SECTION
           CustomTextWidget(
             text: '\$43,294.39',
-            fontSize: 38.sp,
+            fontSize: 40.sp,
             color: textColor1,
             fontWeight: FontWeight.bold,
           ),
@@ -49,7 +51,7 @@ class HomeScreen extends StatelessWidget {
             ],
           ),
           //BALANCE SECTION
-          SizedBox(height: 20.h),
+          SizedBox(height: 28.h),
 
           //ACTION BUTTONS SECTION(SEND/RECEIVE)
           Row(
@@ -93,15 +95,20 @@ class HomeScreen extends StatelessWidget {
                 ),
                 SizedBox(height: 10.h),
                 //BITCOIN BUTTON
-                CoinButton(
-                  coinName: 'Bitcoin',
-                  coinAmount: '0.005 BTC',
-                  coinBalance: '\$150.00',
-                  pnl: '+\$50.00',
-                  profit: true,
-                  coinIcon: Assets.images.bitcoin.image(
-                    height: 50.h,
-                    width: 50.w,
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => TokenScreen()),
+                    );
+                  },
+                  child: CoinButton(
+                    coinName: 'Bitcoin',
+                    coinAmount: '0.005 BTC',
+                    coinBalance: '\$150.00',
+                    pnl: '+\$50.00',
+                    profit: true,
+                    coinIcon: Assets.images.bitcoin.image(),
                   ),
                 ),
 
@@ -113,10 +120,7 @@ class HomeScreen extends StatelessWidget {
                   coinBalance: '\$300.00',
                   pnl: '+\$5.00',
                   profit: true,
-                  coinIcon: Assets.images.ethereum.image(
-                    height: 50.h,
-                    width: 50.w,
-                  ),
+                  coinIcon: Assets.images.ethereum.image(),
                 ),
                 SizedBox(height: 10.h),
                 //SOLANA  BUTTON
@@ -126,10 +130,7 @@ class HomeScreen extends StatelessWidget {
                   coinBalance: '\$100.00',
                   pnl: '-\$50.00',
                   profit: false,
-                  coinIcon: Assets.images.solana.image(
-                    height: 50.h,
-                    width: 50.w,
-                  ),
+                  coinIcon: Assets.images.solana.image(),
                 ),
               ],
             ),
