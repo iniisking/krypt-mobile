@@ -3,6 +3,14 @@ import 'package:flutter/material.dart';
 final backgroundColor = const Color(0xFF1F1F1F);
 final primaryColor = const Color(0xFF2A2A2A);
 final secondaryColor = const Color(0xFF9886E5);
+final secondaryColor2 = const Color(0xFFAC9FF3);
 final buttonColor = const Color(0xFFAB9EF2);
 final textColor1 = const Color(0xFFFFFFFF);
+final whiteIconColor = const Color(0xFFFFFFFF);
 final textColor2 = const Color(0xFF999999);
+final greenColor1 = const Color(0xFF2DA36A);
+final greenColor2 = const Color(0xFF30DD73);
+final greenColor3 = const Color(0xFF20402C);
+final redColor = const Color(0xFFE44C2E);
+
+final greyColor = const Color(0xFF777777);
