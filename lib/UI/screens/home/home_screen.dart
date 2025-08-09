@@ -102,7 +102,7 @@ class HomeScreen extends StatelessWidget {
                       MaterialPageRoute(builder: (context) => TokenScreen()),
                     );
                   },
-                  child: CoinButton(
+                  child: TokenButton(
                     coinName: 'Bitcoin',
                     coinAmount: '0.005 BTC',
                     coinBalance: '\$150.00',
@@ -114,7 +114,7 @@ class HomeScreen extends StatelessWidget {
 
                 SizedBox(height: 10.h),
                 //ETHEREUM BUTTON
-                CoinButton(
+                TokenButton(
                   coinName: 'Ethereum',
                   coinAmount: '0.1 ETH',
                   coinBalance: '\$300.00',
@@ -124,7 +124,7 @@ class HomeScreen extends StatelessWidget {
                 ),
                 SizedBox(height: 10.h),
                 //SOLANA  BUTTON
-                CoinButton(
+                TokenButton(
                   coinName: 'Solana',
                   coinAmount: '2.0 SOL',
                   coinBalance: '\$100.00',

@@ -12,5 +12,4 @@ final greenColor1 = const Color(0xFF2DA36A);
 final greenColor2 = const Color(0xFF30DD73);
 final greenColor3 = const Color(0xFF20402C);
 final redColor = const Color(0xFFE44C2E);
-
 final greyColor = const Color(0xFF777777);

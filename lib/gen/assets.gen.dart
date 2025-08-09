@@ -54,6 +54,9 @@ class $AssetsImagesGen {
   /// File path: assets/images/send.png
   AssetGenImage get send => const AssetGenImage('assets/images/send.png');
 
+  /// File path: assets/images/share.png
+  AssetGenImage get share => const AssetGenImage('assets/images/share.png');
+
   /// File path: assets/images/solana.png
   AssetGenImage get solana => const AssetGenImage('assets/images/solana.png');
 
@@ -70,6 +73,7 @@ class $AssetsImagesGen {
     receive,
     scan,
     send,
+    share,
     solana,
   ];
 }
