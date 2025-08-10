@@ -203,3 +203,109 @@ class SendScreenAppBar extends StatelessWidget implements PreferredSizeWidget {
     );
   }
 }
+
+class EnterAmountScreenAppBar extends StatelessWidget
+    implements PreferredSizeWidget {
+  const EnterAmountScreenAppBar({super.key});
+
+  @override
+  Size get preferredSize => Size.fromHeight(100.h);
+
+  @override
+  Widget build(BuildContext context) {
+    return AppBar(
+      automaticallyImplyLeading: false,
+      elevation: 0,
+      backgroundColor: backgroundColor,
+      toolbarHeight: 100.h, // Add this to match preferredSize
+      flexibleSpace: SafeArea(
+        // Wrap content in SafeArea
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            // Header Row
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 16.w),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Row(
+                    children: [
+                      GestureDetector(
+                        onTap: () => Navigator.pop(context),
+                        child: Icon(
+                          CupertinoIcons.back,
+                          color: Colors.white,
+                          size: 20.sp,
+                        ),
+                      ),
+                      SizedBox(width: 12.w),
+                      CustomTextWidget(
+                        text: 'Enter Amount',
+                        fontSize: 16.sp,
+                        color: textColor1,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ],
+                  ),
+                  CustomTextWidget(
+                    text: 'Next',
+                    fontSize: 16.sp,
+                    color: greyColor2,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(height: 40.h),
+
+            // To Address Row
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 16.w),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Expanded(
+                    // Add Expanded to prevent overflow
+                    child: Row(
+                      children: [
+                        CustomTextWidget(
+                          text: 'To:',
+                          fontSize: 16.sp,
+                          color: textColor2,
+                          fontWeight: FontWeight.w700,
+                        ),
+                        SizedBox(width: 5.w),
+                        Flexible(
+                          // Add Flexible for long addresses
+                          child: CustomTextWidget(
+                            text: '1HcXz9...fR9vJ',
+                            fontSize: 16.sp,
+                            color: whiteIconColor,
+                            fontWeight: FontWeight.w700,
+                            overflow: TextOverflow.ellipsis, // Handle overflow
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  // Edit Icon
+                  Padding(
+                    padding: EdgeInsets.only(left: 8.w),
+                    child: Assets.images.edit.image(
+                      height: 15.h,
+                      width: 15.w,
+                      color: textColor1,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(height: 10.h),
+            Divider(color: textColor2, thickness: 0.5, height: 1),
+          ],
+        ),
+      ),
+    );
+  }
+}

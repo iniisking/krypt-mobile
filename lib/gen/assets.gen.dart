@@ -28,6 +28,9 @@ class $AssetsImagesGen {
   /// File path: assets/images/copy.png
   AssetGenImage get copy => const AssetGenImage('assets/images/copy.png');
 
+  /// File path: assets/images/edit.png
+  AssetGenImage get edit => const AssetGenImage('assets/images/edit.png');
+
   /// File path: assets/images/ethereum.png
   AssetGenImage get ethereum =>
       const AssetGenImage('assets/images/ethereum.png');
@@ -69,6 +72,7 @@ class $AssetsImagesGen {
     clockFill,
     clockOutline,
     copy,
+    edit,
     ethereum,
     homeFill,
     homeOutline,

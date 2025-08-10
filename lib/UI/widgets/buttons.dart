@@ -266,17 +266,27 @@ class _TimeRangeSelectorState extends State<TimeRangeSelector>
 class AppButton extends StatelessWidget {
   final Color buttonColor;
   final Widget child;
-  const AppButton({super.key, required this.buttonColor, required this.child});
+  final Future<void> Function()? onTap;
+
+  const AppButton({
+    super.key,
+    required this.buttonColor,
+    required this.child,
+    this.onTap,
+  });
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 50.h,
-      decoration: BoxDecoration(
-        color: buttonColor,
-        borderRadius: BorderRadius.circular(15.r),
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        height: 50.h,
+        decoration: BoxDecoration(
+          color: buttonColor,
+          borderRadius: BorderRadius.circular(15.r),
+        ),
+        child: Center(child: child),
       ),
-      child: Center(child: child),
     );
   }
 }
