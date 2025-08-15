@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:krypt_mobile/UI/screens/tokens/receive_screen.dart';
-import 'package:krypt_mobile/UI/screens/tokens/token_screen.dart';
 import 'package:krypt_mobile/UI/widgets/appbar.dart';
 import 'package:krypt_mobile/UI/widgets/buttons.dart';
 import 'package:krypt_mobile/UI/widgets/colors.dart';

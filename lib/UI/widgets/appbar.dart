@@ -209,7 +209,7 @@ class EnterAmountScreenAppBar extends StatelessWidget
   const EnterAmountScreenAppBar({super.key});
 
   @override
-  Size get preferredSize => Size.fromHeight(100.h);
+  Size get preferredSize => Size.fromHeight(120.h);
 
   @override
   Widget build(BuildContext context) {
@@ -217,9 +217,8 @@ class EnterAmountScreenAppBar extends StatelessWidget
       automaticallyImplyLeading: false,
       elevation: 0,
       backgroundColor: backgroundColor,
-      toolbarHeight: 100.h, // Add this to match preferredSize
+      toolbarHeight: 120.h,
       flexibleSpace: SafeArea(
-        // Wrap content in SafeArea
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -242,22 +241,17 @@ class EnterAmountScreenAppBar extends StatelessWidget
                       SizedBox(width: 12.w),
                       CustomTextWidget(
                         text: 'Enter Amount',
-                        fontSize: 16.sp,
+                        fontSize: 18.sp,
                         color: textColor1,
                         fontWeight: FontWeight.bold,
                       ),
                     ],
                   ),
-                  CustomTextWidget(
-                    text: 'Next',
-                    fontSize: 16.sp,
-                    color: greyColor2,
-                    fontWeight: FontWeight.w500,
-                  ),
+                  SizedBox(width: 40.w),
                 ],
               ),
             ),
-            SizedBox(height: 40.h),
+            SizedBox(height: 30.h),
 
             // To Address Row
             Padding(
@@ -266,25 +260,13 @@ class EnterAmountScreenAppBar extends StatelessWidget
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Expanded(
-                    // Add Expanded to prevent overflow
                     child: Row(
                       children: [
                         CustomTextWidget(
-                          text: 'To:',
+                          text: 'To: Account 1 (bc1q...pxuu)',
                           fontSize: 16.sp,
-                          color: textColor2,
-                          fontWeight: FontWeight.w700,
-                        ),
-                        SizedBox(width: 5.w),
-                        Flexible(
-                          // Add Flexible for long addresses
-                          child: CustomTextWidget(
-                            text: '1HcXz9...fR9vJ',
-                            fontSize: 16.sp,
-                            color: whiteIconColor,
-                            fontWeight: FontWeight.w700,
-                            overflow: TextOverflow.ellipsis, // Handle overflow
-                          ),
+                          color: textColor1,
+                          fontWeight: FontWeight.w500,
                         ),
                       ],
                     ),
@@ -293,16 +275,15 @@ class EnterAmountScreenAppBar extends StatelessWidget
                   Padding(
                     padding: EdgeInsets.only(left: 8.w),
                     child: Assets.images.edit.image(
-                      height: 15.h,
-                      width: 15.w,
+                      height: 16.h,
+                      width: 16.w,
                       color: textColor1,
                     ),
                   ),
                 ],
               ),
             ),
-            SizedBox(height: 10.h),
-            Divider(color: textColor2, thickness: 0.5, height: 1),
+            SizedBox(height: 20.h),
           ],
         ),
       ),
