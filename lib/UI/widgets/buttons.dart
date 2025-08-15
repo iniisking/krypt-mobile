@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:krypt_mobile/UI/widgets/colors.dart';
 import 'package:krypt_mobile/UI/widgets/text.dart';
+import 'package:krypt_mobile/gen/assets.gen.dart';
 
 class ActionButton extends StatelessWidget {
   final String label;
@@ -61,10 +62,10 @@ class TokenButton extends StatelessWidget {
     super.key,
     required this.coinName,
     required this.coinAmount,
-    required this.coinBalance,
-    required this.pnl,
+    this.coinBalance = '',
+    this.pnl = '',
     required this.coinIcon,
-    required this.profit,
+    this.profit = true,
   });
 
   @override
@@ -286,6 +287,115 @@ class AppButton extends StatelessWidget {
           borderRadius: BorderRadius.circular(15.r),
         ),
         child: Center(child: child),
+      ),
+    );
+  }
+}
+
+class ReceiveTokenButton extends StatelessWidget {
+  final Widget icon;
+  final String coinName;
+  final String coinAddress;
+  final Future<void> Function()? onTap;
+  final Future<void> Function()? onScanTap;
+  const ReceiveTokenButton({
+    super.key,
+    required this.icon,
+    required this.coinName,
+    required this.coinAddress,
+    this.onTap,
+    this.onScanTap,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        padding: EdgeInsets.all(14.sp),
+        height: 80.h,
+        width: double.infinity.w,
+        decoration: BoxDecoration(
+          color: primaryColor,
+          borderRadius: BorderRadius.circular(15.r),
+        ),
+        child: Center(
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              //COIN ICON AND LABEL WITH AMOUNT
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  // Placeholder for coin icon
+                  Container(
+                    padding: EdgeInsets.all(12.sp),
+                    decoration: BoxDecoration(
+                      color: offWhiteColor,
+                      borderRadius: BorderRadius.circular(14.r),
+                    ),
+                    child: icon,
+                  ),
+
+                  SizedBox(width: 10.w),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      //label and amount
+                      CustomTextWidget(
+                        text: coinName,
+                        fontSize: 16.sp,
+                        color: textColor1,
+                        fontWeight: FontWeight.w500,
+                      ),
+                      CustomTextWidget(
+                        text: coinAddress,
+                        fontSize: 16.sp,
+                        color: textColor2,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+
+              // Placeholder for coin balance
+              Row(
+                children: [
+                  //coin balance
+                  GestureDetector(
+                    onTap: onScanTap,
+                    child: Container(
+                      height: 50,
+                      width: 50,
+                      padding: EdgeInsets.all(14.sp),
+                      decoration: BoxDecoration(
+                        color: backgroundColor,
+                        borderRadius: BorderRadius.circular(25.r),
+                      ),
+                      child: Assets.images.receive.image(color: textColor1),
+                    ),
+                  ),
+                  SizedBox(width: 8),
+
+                  //PNL
+                  Container(
+                    height: 50,
+                    width: 50,
+                    padding: EdgeInsets.all(15.sp),
+                    decoration: BoxDecoration(
+                      color: backgroundColor,
+                      borderRadius: BorderRadius.circular(25.r),
+                    ),
+                    child: Assets.images.copy.image(color: textColor1),
+                  ),
+                ],
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }

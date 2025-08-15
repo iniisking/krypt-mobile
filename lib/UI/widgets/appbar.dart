@@ -309,3 +309,66 @@ class EnterAmountScreenAppBar extends StatelessWidget
     );
   }
 }
+
+class SelectTokenSendAppBar extends StatelessWidget
+    implements PreferredSizeWidget {
+  const SelectTokenSendAppBar({super.key});
+
+  @override
+  Size get preferredSize => Size.fromHeight(40.h);
+
+  @override
+  Widget build(BuildContext context) {
+    return AppBar(
+      backgroundColor: backgroundColor,
+      automaticallyImplyLeading: false,
+      elevation: 0,
+      title: Row(
+        children: [
+          GestureDetector(
+            onTap: () => Navigator.pop(context),
+            child: Icon(Icons.clear, color: textColor1, size: 24.sp),
+          ),
+          SizedBox(width: 8.w),
+          CustomTextWidget(
+            text: 'Select Token',
+            fontSize: 16.sp,
+            color: textColor1,
+            fontWeight: FontWeight.w600,
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class SelectTokenReceiveAppbar extends StatelessWidget
+    implements PreferredSizeWidget {
+  @override
+  Size get preferredSize => Size.fromHeight(40.h);
+  const SelectTokenReceiveAppbar({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return AppBar(
+      backgroundColor: backgroundColor,
+      automaticallyImplyLeading: false,
+      elevation: 0,
+      title: Row(
+        children: [
+          GestureDetector(
+            onTap: () => Navigator.pop(context),
+            child: Icon(Icons.clear, color: textColor1, size: 24.sp),
+          ),
+          SizedBox(width: 8.w),
+          CustomTextWidget(
+            text: 'Receive',
+            fontSize: 16.sp,
+            color: textColor1,
+            fontWeight: FontWeight.w600,
+          ),
+        ],
+      ),
+    );
+  }
+}

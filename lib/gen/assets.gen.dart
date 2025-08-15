@@ -14,6 +14,10 @@ import 'package:flutter/widgets.dart';
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
+  /// File path: assets/images/bitcoin outline.png
+  AssetGenImage get bitcoinOutline =>
+      const AssetGenImage('assets/images/bitcoin outline.png');
+
   /// File path: assets/images/bitcoin.png
   AssetGenImage get bitcoin => const AssetGenImage('assets/images/bitcoin.png');
 
@@ -30,6 +34,10 @@ class $AssetsImagesGen {
 
   /// File path: assets/images/edit.png
   AssetGenImage get edit => const AssetGenImage('assets/images/edit.png');
+
+  /// File path: assets/images/ethereum outline.png
+  AssetGenImage get ethereumOutline =>
+      const AssetGenImage('assets/images/ethereum outline.png');
 
   /// File path: assets/images/ethereum.png
   AssetGenImage get ethereum =>
@@ -63,16 +71,22 @@ class $AssetsImagesGen {
   /// File path: assets/images/share.png
   AssetGenImage get share => const AssetGenImage('assets/images/share.png');
 
+  /// File path: assets/images/solana outline.png
+  AssetGenImage get solanaOutline =>
+      const AssetGenImage('assets/images/solana outline.png');
+
   /// File path: assets/images/solana.png
   AssetGenImage get solana => const AssetGenImage('assets/images/solana.png');
 
   /// List of all assets
   List<AssetGenImage> get values => [
+    bitcoinOutline,
     bitcoin,
     clockFill,
     clockOutline,
     copy,
     edit,
+    ethereumOutline,
     ethereum,
     homeFill,
     homeOutline,
@@ -82,6 +96,7 @@ class $AssetsImagesGen {
     scan,
     send,
     share,
+    solanaOutline,
     solana,
   ];
 }

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:krypt_mobile/UI/screens/tokens/select_token_receive_screen.dart';
+import 'package:krypt_mobile/UI/screens/tokens/select_token_send_screen.dart';
 import 'package:krypt_mobile/UI/screens/tokens/token_screen.dart';
 import 'package:krypt_mobile/UI/widgets/appbar.dart';
 import 'package:krypt_mobile/UI/widgets/buttons.dart';
@@ -58,6 +60,12 @@ class HomeScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               ActionButton(
+                onTap: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => SelectTokenReceiveScreen(),
+                  ),
+                ),
                 label: 'Receive',
                 icon: Assets.images.receive.image(
                   height: 30,
@@ -66,6 +74,12 @@ class HomeScreen extends StatelessWidget {
                 ),
               ),
               ActionButton(
+                onTap: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => SelectTokenSendScreen(),
+                  ),
+                ),
                 label: 'Send',
                 icon: Assets.images.send.image(
                   height: 35,
@@ -114,23 +128,39 @@ class HomeScreen extends StatelessWidget {
 
                 SizedBox(height: 10.h),
                 //ETHEREUM BUTTON
-                TokenButton(
-                  coinName: 'Ethereum',
-                  coinAmount: '0.1 ETH',
-                  coinBalance: '\$300.00',
-                  pnl: '+\$5.00',
-                  profit: true,
-                  coinIcon: Assets.images.ethereum.image(),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => TokenScreen()),
+                    );
+                  },
+                  child: TokenButton(
+                    coinName: 'Ethereum',
+                    coinAmount: '0.1 ETH',
+                    coinBalance: '\$300.00',
+                    pnl: '+\$5.00',
+                    profit: true,
+                    coinIcon: Assets.images.ethereum.image(),
+                  ),
                 ),
                 SizedBox(height: 10.h),
                 //SOLANA  BUTTON
-                TokenButton(
-                  coinName: 'Solana',
-                  coinAmount: '2.0 SOL',
-                  coinBalance: '\$100.00',
-                  pnl: '-\$50.00',
-                  profit: false,
-                  coinIcon: Assets.images.solana.image(),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => TokenScreen()),
+                    );
+                  },
+                  child: TokenButton(
+                    coinName: 'Solana',
+                    coinAmount: '2.0 SOL',
+                    coinBalance: '\$100.00',
+                    pnl: '-\$50.00',
+                    profit: false,
+                    coinIcon: Assets.images.solana.image(),
+                  ),
                 ),
               ],
             ),
