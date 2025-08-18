@@ -47,6 +47,9 @@ class $AssetsImagesGen {
   AssetGenImage get exchange =>
       const AssetGenImage('assets/images/exchange.png');
 
+  /// File path: assets/images/hide.png
+  AssetGenImage get hide => const AssetGenImage('assets/images/hide.png');
+
   /// File path: assets/images/home fill.png
   AssetGenImage get homeFill =>
       const AssetGenImage('assets/images/home fill.png');
@@ -90,6 +93,9 @@ class $AssetsImagesGen {
   /// File path: assets/images/solana.png
   AssetGenImage get solana => const AssetGenImage('assets/images/solana.png');
 
+  /// File path: assets/images/view.png
+  AssetGenImage get view => const AssetGenImage('assets/images/view.png');
+
   /// List of all assets
   List<AssetGenImage> get values => [
     bitcoinOutline,
@@ -101,6 +107,7 @@ class $AssetsImagesGen {
     ethereumOutline,
     ethereum,
     exchange,
+    hide,
     homeFill,
     homeOutline,
     incoming,
@@ -113,6 +120,7 @@ class $AssetsImagesGen {
     share,
     solanaOutline,
     solana,
+    view,
   ];
 }
 
