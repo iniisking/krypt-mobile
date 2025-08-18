@@ -353,3 +353,30 @@ class SelectTokenReceiveAppbar extends StatelessWidget
     );
   }
 }
+
+class ProfileAppBar extends StatelessWidget implements PreferredSizeWidget {
+  @override
+  Size get preferredSize => Size.fromHeight(56.h);
+
+  const ProfileAppBar({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return AppBar(
+      backgroundColor: backgroundColor,
+      elevation: 0,
+      automaticallyImplyLeading: false,
+      title: Row(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          CustomTextWidget(
+            text: 'Profile',
+            fontSize: 24.sp,
+            color: textColor1,
+            fontWeight: FontWeight.bold,
+          ),
+        ],
+      ),
+    );
+  }
+}

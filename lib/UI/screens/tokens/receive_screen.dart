@@ -5,6 +5,7 @@ import 'package:krypt_mobile/UI/widgets/buttons.dart';
 import 'package:krypt_mobile/UI/widgets/colors.dart';
 import 'package:krypt_mobile/UI/widgets/text.dart';
 import 'package:krypt_mobile/gen/assets.gen.dart';
+import 'package:share_plus/share_plus.dart';
 
 class ReceiveScreen extends StatelessWidget {
   const ReceiveScreen({super.key});
@@ -73,6 +74,7 @@ class ReceiveScreen extends StatelessWidget {
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 16.w),
             child: AppButton(
+              onTap: () => Share.share('1F1tAaz5x1HUXrCNLbtMDqcw6o5GNn4xqX'),
               buttonColor: secondaryColor3,
               child: CustomTextWidget(
                 text: 'Share',
