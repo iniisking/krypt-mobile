@@ -43,6 +43,10 @@ class $AssetsImagesGen {
   AssetGenImage get ethereum =>
       const AssetGenImage('assets/images/ethereum.png');
 
+  /// File path: assets/images/exchange.png
+  AssetGenImage get exchange =>
+      const AssetGenImage('assets/images/exchange.png');
+
   /// File path: assets/images/home fill.png
   AssetGenImage get homeFill =>
       const AssetGenImage('assets/images/home fill.png');
@@ -50,6 +54,14 @@ class $AssetsImagesGen {
   /// File path: assets/images/home outline.png
   AssetGenImage get homeOutline =>
       const AssetGenImage('assets/images/home outline.png');
+
+  /// File path: assets/images/incoming.png
+  AssetGenImage get incoming =>
+      const AssetGenImage('assets/images/incoming.png');
+
+  /// File path: assets/images/outcoming.png
+  AssetGenImage get outcoming =>
+      const AssetGenImage('assets/images/outcoming.png');
 
   /// File path: assets/images/profile fill.png
   AssetGenImage get profileFill =>
@@ -88,8 +100,11 @@ class $AssetsImagesGen {
     edit,
     ethereumOutline,
     ethereum,
+    exchange,
     homeFill,
     homeOutline,
+    incoming,
+    outcoming,
     profileFill,
     profileOutline,
     receive,
