@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:krypt_mobile/UI/screens/recent%20activity/transaction_details_screen.dart';
 import 'package:krypt_mobile/UI/widgets/appbar.dart';
 import 'package:krypt_mobile/UI/widgets/buttons.dart';
 import 'package:krypt_mobile/UI/widgets/colors.dart';
 import 'package:krypt_mobile/UI/widgets/text.dart';
-import 'package:krypt_mobile/gen/assets.gen.dart';
 
 class RecentActivityScreen extends StatelessWidget {
   const RecentActivityScreen({super.key});
@@ -19,7 +19,7 @@ class RecentActivityScreen extends StatelessWidget {
           padding: EdgeInsets.symmetric(horizontal: 16.w),
           child: Column(
             children: [
-              SizedBox(height: 20.h),
+              SizedBox(height: 10.h),
               Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [

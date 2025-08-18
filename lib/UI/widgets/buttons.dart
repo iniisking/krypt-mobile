@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:krypt_mobile/UI/screens/recent%20activity/transaction_details_screen.dart';
 import 'package:krypt_mobile/UI/widgets/colors.dart';
 import 'package:krypt_mobile/UI/widgets/text.dart';
 import 'package:krypt_mobile/gen/assets.gen.dart';
@@ -406,6 +407,7 @@ class RecentActivityButton extends StatelessWidget {
   final String amount;
   final String currency;
   final bool isIncoming;
+  final Future<void> Function()? onTap;
 
   const RecentActivityButton({
     super.key,
@@ -413,78 +415,85 @@ class RecentActivityButton extends StatelessWidget {
     required this.amount,
     required this.currency,
     required this.isIncoming,
+    this.onTap,
   });
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.all(12.sp),
-      height: 80.h,
-      width: double.infinity.w,
-      decoration: BoxDecoration(
-        color: primaryColor,
-        borderRadius: BorderRadius.circular(12.r),
+    return GestureDetector(
+      onTap: () => Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => TransactionDetailsScreen()),
       ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Row(
-            children: [
-              CircleAvatar(
-                backgroundColor: secondaryColor4,
-                radius: 25.r,
-                child: isIncoming
-                    ? Assets.images.incoming.image(
-                        height: 25.h,
-                        width: 25.w,
-                        color: Colors.green,
-                      )
-                    : Assets.images.outcoming.image(
-                        height: 25.h,
-                        width: 25.w,
-                        color: Colors.red,
-                      ),
-              ),
-              SizedBox(width: 10.w),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  CustomTextWidget(
-                    text: isIncoming ? 'Received' : 'Sent',
-                    fontSize: 16.sp,
-                    color: textColor1,
-                    fontWeight: FontWeight.w500,
-                  ),
-                  CustomTextWidget(
-                    text: isIncoming
-                        ? 'From $walletAddress'
-                        : 'To $walletAddress',
-                    fontSize: 14.sp,
-                    color: textColor2,
-                    fontWeight: FontWeight.normal,
-                  ),
-                ],
-              ),
-            ],
-          ),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.end,
-            children: [
-              CustomTextWidget(
-                text: amount,
-                fontSize: 16.sp,
-                color: isIncoming ? Colors.green : Colors.red,
-                fontWeight: FontWeight.w500,
-              ),
-              CustomTextWidget(
-                text: currency,
-                fontSize: 14.sp,
-                color: textColor2,
-                fontWeight: FontWeight.normal,
-              ),
-            ],
-          ),
-        ],
+      child: Container(
+        padding: EdgeInsets.all(12.sp),
+        height: 80.h,
+        width: double.infinity.w,
+        decoration: BoxDecoration(
+          color: primaryColor,
+          borderRadius: BorderRadius.circular(12.r),
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Row(
+              children: [
+                CircleAvatar(
+                  backgroundColor: secondaryColor4,
+                  radius: 25.r,
+                  child: isIncoming
+                      ? Assets.images.incoming.image(
+                          height: 25.h,
+                          width: 25.w,
+                          color: Colors.green,
+                        )
+                      : Assets.images.outcoming.image(
+                          height: 25.h,
+                          width: 25.w,
+                          color: Colors.red,
+                        ),
+                ),
+                SizedBox(width: 10.w),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    CustomTextWidget(
+                      text: isIncoming ? 'Received' : 'Sent',
+                      fontSize: 16.sp,
+                      color: textColor1,
+                      fontWeight: FontWeight.w500,
+                    ),
+                    CustomTextWidget(
+                      text: isIncoming
+                          ? 'From $walletAddress'
+                          : 'To $walletAddress',
+                      fontSize: 14.sp,
+                      color: textColor2,
+                      fontWeight: FontWeight.normal,
+                    ),
+                  ],
+                ),
+              ],
+            ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: [
+                CustomTextWidget(
+                  text: amount,
+                  fontSize: 16.sp,
+                  color: isIncoming ? Colors.green : Colors.red,
+                  fontWeight: FontWeight.w500,
+                ),
+                CustomTextWidget(
+                  text: currency,
+                  fontSize: 14.sp,
+                  color: textColor2,
+                  fontWeight: FontWeight.normal,
+                ),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }
