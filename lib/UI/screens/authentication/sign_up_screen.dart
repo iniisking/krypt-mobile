@@ -108,7 +108,7 @@ class SignUpScreen extends StatelessWidget {
                     ),
                     buttonColor: secondaryColor,
                     child: CustomTextWidget(
-                      text: 'Sign Up',
+                      text: 'Continue',
                       fontSize: 16,
                       color: Colors.white,
                       fontWeight: FontWeight.bold,

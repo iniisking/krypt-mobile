@@ -429,3 +429,108 @@ class TransactionWidget extends StatelessWidget {
     );
   }
 }
+
+class SeedPhraseContainer extends StatelessWidget {
+  const SeedPhraseContainer({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: EdgeInsets.symmetric(horizontal: 12.w),
+      height: 40.h,
+      width: 150.w,
+      decoration: BoxDecoration(
+        color: blackColor,
+        borderRadius: BorderRadius.circular(20.r),
+        border: Border.all(color: greyColor3, width: 1.5),
+      ),
+      child: Row(
+        children: [
+          CustomTextWidget(
+            text: '1',
+            fontSize: 16.sp,
+            color: textColor2,
+            fontWeight: FontWeight.bold,
+          ),
+          SizedBox(width: 8.w),
+          VerticalDivider(color: greyColor3, thickness: 1.5),
+          SizedBox(width: 8.w),
+          CustomTextWidget(
+            text: 'gorilla',
+            fontSize: 14.sp,
+            color: textColor1,
+            fontWeight: FontWeight.bold,
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class GorillaWidget extends StatelessWidget {
+  final String number;
+  final String text;
+  final double width;
+  final double height;
+
+  const GorillaWidget({
+    Key? key,
+    this.number = '1',
+    this.text = 'gorilla',
+    this.width = 320,
+    this.height = 80,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: width,
+      height: height,
+      decoration: BoxDecoration(
+        color: const Color(0xFF1C1C1C),
+        borderRadius: BorderRadius.circular(40),
+        border: Border.all(color: const Color(0xFF3A3A3A), width: 2),
+      ),
+      child: Row(
+        children: [
+          // Number section
+          Container(
+            width: height, // Square section
+            height: height,
+            decoration: BoxDecoration(
+              color: const Color(0xFF2A2A2A),
+              borderRadius: BorderRadius.circular(38),
+              border: Border.all(color: const Color(0xFF3A3A3A), width: 1),
+            ),
+            child: Center(
+              child: Text(
+                number,
+                style: const TextStyle(
+                  fontSize: 32,
+                  fontWeight: FontWeight.w300,
+                  color: Color(0xFF888888),
+                  fontFamily: 'SF Pro Display',
+                ),
+              ),
+            ),
+          ),
+          // Text section
+          Expanded(
+            child: Center(
+              child: Text(
+                text,
+                style: const TextStyle(
+                  fontSize: 28,
+                  fontWeight: FontWeight.w400,
+                  color: Colors.white,
+                  fontFamily: 'SF Pro Display',
+                  letterSpacing: 0.5,
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}

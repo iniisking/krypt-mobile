@@ -20,3 +20,5 @@ final greyColor2 = const Color(0xFF9A9A9A);
 final offWhiteColor = const Color(0xFFFEFEFE);
 final purpleColor = const Color(0xFF575374);
 final secondaryColor4 = const Color(0xFF323232);
+final blackColor = const Color(0xFF181818);
+final greyColor3 = const Color(0xFF474747);

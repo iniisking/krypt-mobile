@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:krypt_mobile/UI/screens/authentication/seed_phrase_screen.dart';
 import 'package:krypt_mobile/UI/widgets/buttons.dart';
 import 'package:krypt_mobile/UI/widgets/colors.dart';
 import 'package:krypt_mobile/UI/widgets/text.dart';
@@ -32,7 +33,7 @@ class VerifyEmailScreen extends StatelessWidget {
                 children: [
                   CustomTextWidget(
                     text: 'Enter the code',
-                    fontSize: 24.sp,
+                    fontSize: 20.sp,
                     fontWeight: FontWeight.w600,
                     color: textColor1,
                     textAlign: TextAlign.center,
@@ -60,7 +61,7 @@ class VerifyEmailScreen extends StatelessWidget {
                 onTap: () => Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const VerifyEmailScreen(),
+                    builder: (context) => const SeedPhraseScreen(),
                   ),
                 ),
                 buttonColor: secondaryColor,
