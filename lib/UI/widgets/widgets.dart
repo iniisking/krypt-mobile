@@ -474,12 +474,12 @@ class GorillaWidget extends StatelessWidget {
   final double height;
 
   const GorillaWidget({
-    Key? key,
+    super.key,
     this.number = '1',
     this.text = 'gorilla',
     this.width = 320,
     this.height = 80,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

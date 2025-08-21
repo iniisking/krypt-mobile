@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:krypt_mobile/UI/navigation/main_screen.dart';
-import 'package:krypt_mobile/UI/screens/authentication/sign_up_screen.dart';
+import 'package:krypt_mobile/UI/screens/authentication/onboarding_screen.dart';
 import 'package:krypt_mobile/controller/bottomnav_controller.dart';
 import 'package:provider/provider.dart';
 
@@ -30,7 +29,7 @@ class MyApp extends StatelessWidget {
         // theme: ThemeData(
         //   colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         // ),
-        home: SignUpScreen(),
+        home: OnboardingScreen(),
       ),
     );
   }

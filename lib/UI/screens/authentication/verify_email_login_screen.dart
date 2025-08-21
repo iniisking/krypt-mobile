@@ -1,14 +1,15 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:krypt_mobile/UI/screens/authentication/device_auth_screen.dart';
 import 'package:krypt_mobile/UI/screens/authentication/seed_phrase_screen.dart';
 import 'package:krypt_mobile/UI/widgets/buttons.dart';
 import 'package:krypt_mobile/UI/widgets/colors.dart';
 import 'package:krypt_mobile/UI/widgets/text.dart';
 import 'package:krypt_mobile/UI/widgets/textfields.dart';
 
-class VerifyEmailSignUpScreen extends StatelessWidget {
-  const VerifyEmailSignUpScreen({super.key});
+class VerifyEmailLoginScreen extends StatelessWidget {
+  const VerifyEmailLoginScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -58,15 +59,15 @@ class VerifyEmailSignUpScreen extends StatelessWidget {
               ),
               SizedBox(height: 20.w),
               AppButton(
-                onTap: () => Navigator.push(
+                onTap: () => Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const SeedPhraseScreen(),
+                    builder: (context) => const DeviceAuthScreen(),
                   ),
                 ),
                 buttonColor: secondaryColor,
                 child: CustomTextWidget(
-                  text: 'Sign Up',
+                  text: 'Log In',
                   fontSize: 16,
                   color: Colors.white,
                   fontWeight: FontWeight.bold,

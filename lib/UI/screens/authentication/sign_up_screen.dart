@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:krypt_mobile/UI/screens/authentication/onboarding_screen.dart';
 import 'package:krypt_mobile/UI/screens/authentication/verify_email_screen.dart';
 import 'package:krypt_mobile/UI/widgets/buttons.dart';
 import 'package:krypt_mobile/UI/widgets/colors.dart';
@@ -27,7 +28,7 @@ class SignUpScreen extends StatelessWidget {
                     color: textColor1,
                     fontWeight: FontWeight.bold,
                   ),
-                  SizedBox(height: 100),
+                  SizedBox(height: 40),
 
                   // Email
                   Padding(
@@ -103,7 +104,7 @@ class SignUpScreen extends StatelessWidget {
                     onTap: () => Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => const VerifyEmailScreen(),
+                        builder: (context) => const VerifyEmailSignUpScreen(),
                       ),
                     ),
                     buttonColor: secondaryColor,
@@ -113,6 +114,27 @@ class SignUpScreen extends StatelessWidget {
                       color: Colors.white,
                       fontWeight: FontWeight.bold,
                     ),
+                  ),
+                  SizedBox(height: 20.h),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      CustomTextWidget(
+                        text: 'Already have an account? ',
+                        fontSize: 14,
+                        color: Colors.white,
+                        fontWeight: FontWeight.w600,
+                      ),
+                      GestureDetector(
+                        onTap: () => showSignInOptions(context),
+                        child: CustomTextWidget(
+                          text: 'Log in',
+                          fontSize: 14,
+                          color: secondaryColor,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ],
                   ),
                 ],
               ),

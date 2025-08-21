@@ -10,6 +10,7 @@
 // ignore_for_file: deprecated_member_use,directives_ordering,implicit_dynamic_list_literal,unnecessary_import
 
 import 'package:flutter/widgets.dart';
+import 'package:lottie/lottie.dart' as _lottie;
 
 class $AssetsImagesGen {
   const $AssetsImagesGen();
@@ -32,8 +33,14 @@ class $AssetsImagesGen {
   /// File path: assets/images/copy.png
   AssetGenImage get copy => const AssetGenImage('assets/images/copy.png');
 
+  /// File path: assets/images/done.png
+  AssetGenImage get done => const AssetGenImage('assets/images/done.png');
+
   /// File path: assets/images/edit.png
   AssetGenImage get edit => const AssetGenImage('assets/images/edit.png');
+
+  /// File path: assets/images/email.png
+  AssetGenImage get email => const AssetGenImage('assets/images/email.png');
 
   /// File path: assets/images/ethereum outline.png
   AssetGenImage get ethereumOutline =>
@@ -46,6 +53,9 @@ class $AssetsImagesGen {
   /// File path: assets/images/exchange.png
   AssetGenImage get exchange =>
       const AssetGenImage('assets/images/exchange.png');
+
+  /// File path: assets/images/face-id.png
+  AssetGenImage get faceId => const AssetGenImage('assets/images/face-id.png');
 
   /// File path: assets/images/hide.png
   AssetGenImage get hide => const AssetGenImage('assets/images/hide.png');
@@ -80,6 +90,10 @@ class $AssetsImagesGen {
   /// File path: assets/images/scan.png
   AssetGenImage get scan => const AssetGenImage('assets/images/scan.png');
 
+  /// File path: assets/images/seed phrase .png
+  AssetGenImage get seedPhrase =>
+      const AssetGenImage('assets/images/seed phrase .png');
+
   /// File path: assets/images/send.png
   AssetGenImage get send => const AssetGenImage('assets/images/send.png');
 
@@ -93,6 +107,10 @@ class $AssetsImagesGen {
   /// File path: assets/images/solana.png
   AssetGenImage get solana => const AssetGenImage('assets/images/solana.png');
 
+  /// File path: assets/images/usdt outline.png
+  AssetGenImage get usdtOutline =>
+      const AssetGenImage('assets/images/usdt outline.png');
+
   /// File path: assets/images/view.png
   AssetGenImage get view => const AssetGenImage('assets/images/view.png');
 
@@ -103,10 +121,13 @@ class $AssetsImagesGen {
     clockFill,
     clockOutline,
     copy,
+    done,
     edit,
+    email,
     ethereumOutline,
     ethereum,
     exchange,
+    faceId,
     hide,
     homeFill,
     homeOutline,
@@ -116,18 +137,39 @@ class $AssetsImagesGen {
     profileOutline,
     receive,
     scan,
+    seedPhrase,
     send,
     share,
     solanaOutline,
     solana,
+    usdtOutline,
     view,
   ];
+}
+
+class $AssetsLottieGen {
+  const $AssetsLottieGen();
+
+  /// File path: assets/lottie/Loading Crypto App.json
+  LottieGenImage get loadingCryptoApp =>
+      const LottieGenImage('assets/lottie/Loading Crypto App.json');
+
+  /// File path: assets/lottie/Success.json
+  LottieGenImage get success =>
+      const LottieGenImage('assets/lottie/Success.json');
+
+  /// File path: assets/lottie/lock.json
+  LottieGenImage get lock => const LottieGenImage('assets/lottie/lock.json');
+
+  /// List of all assets
+  List<LottieGenImage> get values => [loadingCryptoApp, success, lock];
 }
 
 class Assets {
   const Assets._();
 
   static const $AssetsImagesGen images = $AssetsImagesGen();
+  static const $AssetsLottieGen lottie = $AssetsLottieGen();
 }
 
 class AssetGenImage {
@@ -216,4 +258,71 @@ class AssetGenImageAnimation {
   final bool isAnimation;
   final Duration duration;
   final int frames;
+}
+
+class LottieGenImage {
+  const LottieGenImage(this._assetName, {this.flavors = const {}});
+
+  final String _assetName;
+  final Set<String> flavors;
+
+  _lottie.LottieBuilder lottie({
+    Animation<double>? controller,
+    bool? animate,
+    _lottie.FrameRate? frameRate,
+    bool? repeat,
+    bool? reverse,
+    _lottie.LottieDelegates? delegates,
+    _lottie.LottieOptions? options,
+    void Function(_lottie.LottieComposition)? onLoaded,
+    _lottie.LottieImageProviderFactory? imageProviderFactory,
+    Key? key,
+    AssetBundle? bundle,
+    Widget Function(BuildContext, Widget, _lottie.LottieComposition?)?
+    frameBuilder,
+    ImageErrorWidgetBuilder? errorBuilder,
+    double? width,
+    double? height,
+    BoxFit? fit,
+    AlignmentGeometry? alignment,
+    String? package,
+    bool? addRepaintBoundary,
+    FilterQuality? filterQuality,
+    void Function(String)? onWarning,
+    _lottie.LottieDecoder? decoder,
+    _lottie.RenderCache? renderCache,
+    bool? backgroundLoading,
+  }) {
+    return _lottie.Lottie.asset(
+      _assetName,
+      controller: controller,
+      animate: animate,
+      frameRate: frameRate,
+      repeat: repeat,
+      reverse: reverse,
+      delegates: delegates,
+      options: options,
+      onLoaded: onLoaded,
+      imageProviderFactory: imageProviderFactory,
+      key: key,
+      bundle: bundle,
+      frameBuilder: frameBuilder,
+      errorBuilder: errorBuilder,
+      width: width,
+      height: height,
+      fit: fit,
+      alignment: alignment,
+      package: package,
+      addRepaintBoundary: addRepaintBoundary,
+      filterQuality: filterQuality,
+      onWarning: onWarning,
+      decoder: decoder,
+      renderCache: renderCache,
+      backgroundLoading: backgroundLoading,
+    );
+  }
+
+  String get path => _assetName;
+
+  String get keyName => _assetName;
 }

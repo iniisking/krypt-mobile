@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:krypt_mobile/UI/navigation/main_screen.dart';
+import 'package:krypt_mobile/UI/screens/authentication/device_auth_screen.dart';
 import 'package:krypt_mobile/UI/widgets/buttons.dart';
 import 'package:krypt_mobile/UI/widgets/colors.dart';
 import 'package:krypt_mobile/UI/widgets/text.dart';
@@ -88,7 +88,7 @@ class SeedPhraseScreen extends StatelessWidget {
                 AppButton(
                   onTap: () => Navigator.pushReplacement(
                     context,
-                    MaterialPageRoute(builder: (context) => MainScreen()),
+                    MaterialPageRoute(builder: (context) => DeviceAuthScreen()),
                   ),
                   buttonColor: secondaryColor,
                   child: CustomTextWidget(

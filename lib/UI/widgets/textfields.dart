@@ -325,3 +325,116 @@ class _CodeVeriInputState extends State<CodeVeriInput> {
     );
   }
 }
+
+class SeedPhraseTextField extends StatefulWidget {
+  final String hintText;
+  final TextInputType keyboardType;
+  final TextEditingController controller;
+  final Widget? suffixIcon;
+  final bool obscureText;
+  final String? Function(String?)? validator;
+  final int? maxLines;
+  final int fontSize;
+  final Color hintTextColor;
+  final Color primaryBorderColor;
+  final Color errorBorderColor;
+
+  const SeedPhraseTextField({
+    super.key,
+    required this.hintText,
+    required this.controller,
+    this.keyboardType = TextInputType.text,
+    this.suffixIcon,
+    this.obscureText = false,
+    this.validator,
+    this.maxLines = null, // Changed to null for unlimited lines
+    this.fontSize = 17,
+    this.hintTextColor = const Color(0xFF9A9A9A),
+    required this.primaryBorderColor,
+    required this.errorBorderColor,
+  });
+
+  @override
+  State<SeedPhraseTextField> createState() => _SeedPhraseTextFieldState();
+}
+
+class _SeedPhraseTextFieldState extends State<SeedPhraseTextField> {
+  late bool _isObscured;
+
+  @override
+  void initState() {
+    super.initState();
+    _isObscured = widget.obscureText;
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return TextFormField(
+      textInputAction: TextInputAction.next,
+      obscureText: _isObscured,
+      controller: widget.controller,
+      keyboardType: TextInputType.multiline, // Changed to multiline
+      validator: widget.validator,
+      minLines: 5, // This sets the minimum height
+      maxLines: widget.maxLines,
+      cursorColor: secondaryColor,
+      textAlignVertical: TextAlignVertical.top, // This aligns text to top
+      style: TextStyle(
+        fontSize: widget.fontSize.toDouble(),
+        color: secondaryColor,
+      ),
+      decoration: InputDecoration(
+        hintText: widget.hintText,
+        hintStyle: TextStyle(
+          color: widget.hintTextColor,
+          fontSize: widget.fontSize.toDouble(),
+          letterSpacing: 0,
+        ),
+        alignLabelWithHint: true, // This aligns hint text to top
+        isDense: true,
+        contentPadding: const EdgeInsets.only(
+          left: 20,
+          right: 20,
+          top: 18,
+          bottom: 18, // Reduced bottom padding for better text alignment
+        ),
+        focusedBorder: _buildBorder(secondaryColor),
+        focusedErrorBorder: _buildBorder(widget.errorBorderColor),
+        enabledBorder: _buildBorder(widget.primaryBorderColor),
+        errorBorder: _buildBorder(widget.errorBorderColor),
+        suffixIcon: widget.obscureText
+            ? GestureDetector(
+                onTap: () {
+                  setState(() {
+                    _isObscured = !_isObscured;
+                  });
+                },
+                child: Padding(
+                  padding: EdgeInsets.all(12.r),
+                  child: _isObscured
+                      ? Assets.images.hide.image(
+                          height: 20.h,
+                          width: 20.w,
+                          color: widget.hintTextColor,
+                        )
+                      : Assets.images.view.image(
+                          height: 20.h,
+                          width: 20.w,
+                          color: widget.hintTextColor,
+                        ),
+                ),
+              )
+            : widget.suffixIcon,
+        filled: true,
+        fillColor: const Color(0xFF232323),
+      ),
+    );
+  }
+
+  OutlineInputBorder _buildBorder(Color color) {
+    return OutlineInputBorder(
+      borderRadius: BorderRadius.circular(17.r),
+      borderSide: BorderSide(color: color),
+    );
+  }
+}
