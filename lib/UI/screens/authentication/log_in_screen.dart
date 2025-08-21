@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:krypt_mobile/UI/screens/authentication/sign_up_screen.dart';
 import 'package:krypt_mobile/UI/screens/authentication/verify_email_login_screen.dart';
-import 'package:krypt_mobile/UI/screens/authentication/verify_email_screen.dart';
 import 'package:krypt_mobile/UI/widgets/buttons.dart';
 import 'package:krypt_mobile/UI/widgets/colors.dart';
 import 'package:krypt_mobile/UI/widgets/text.dart';

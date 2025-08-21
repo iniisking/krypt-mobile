@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:krypt_mobile/UI/screens/recent%20activity/transaction_details_screen.dart';
 import 'package:krypt_mobile/UI/widgets/appbar.dart';
 import 'package:krypt_mobile/UI/widgets/buttons.dart';
 import 'package:krypt_mobile/UI/widgets/colors.dart';
