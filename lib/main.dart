@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:krypt_mobile/UI/screens/authentication/onboarding_screen.dart';
 import 'package:krypt_mobile/controller/bottomnav_controller.dart';
@@ -7,7 +6,6 @@ import 'package:provider/provider.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await dotenv.load(fileName: '.env');
   runApp(
     MultiProvider(
       providers: [ChangeNotifierProvider(create: (_) => BottomNavProvider())],

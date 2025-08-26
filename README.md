@@ -1,8 +1,4 @@
 <p align="center">
-  <img src="docs/media/hero.png" alt="Krypt Mobile" width="720" />
-</p>
-
-<p align="center">
   <b>Krypt Mobile</b> — a Flutter wallet-style app. Frontend uses Flutter with Bloc for state management. Backend is Spring Boot deployed on AWS.
 </p>
 
@@ -19,17 +15,11 @@
 
 ### Demo
 
-<p align="center">
-  <img src="docs/media/demo.gif" alt="App demo" width="320" />
-</p>
+![Voice to note flow](docs/intro.gif)
 
-Add additional screenshots here:
+![Voice to note flow](docs/auth.gif)
 
-<p align="center">
-  <img src="docs/media/screen_home.png" alt="Home screen" width="240" />
-  <img src="docs/media/screen_send.png" alt="Send screen" width="240" />
-  <img src="docs/media/screen_profile.png" alt="Profile screen" width="240" />
-</p>
+![Voice to note flow](docs/flow.gif)
 
 ### Features
 
@@ -115,7 +105,7 @@ Provide links or repo references:
 
 - Add environment/config handling for API endpoints (e.g., `--dart-define=API_BASE_URL=...`)
 - Store secrets securely; never commit keys to the repo
- - Create a `.env` file (see `.env.example`) and the app will load it via `flutter_dotenv`.
+- Create a `.env` file (see `.env.example`) and the app will load it via `flutter_dotenv`.
 
 ### Scripts
 
