@@ -15,11 +15,11 @@
 
 ### Demo
 
-![Voice to note flow](docs/intro.gif)
+![Intro](docs/intro.gif)
 
-![Voice to note flow](docs/auth.gif)
+![Auth](docs/auth.gif)
 
-![Voice to note flow](docs/flow.gif)
+![User Flow](docs/flow.gif)
 
 ### Features
 
