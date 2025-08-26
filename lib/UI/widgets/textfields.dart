@@ -1,3 +1,5 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -347,7 +349,7 @@ class SeedPhraseTextField extends StatefulWidget {
     this.suffixIcon,
     this.obscureText = false,
     this.validator,
-    this.maxLines = null, // Changed to null for unlimited lines
+    this.maxLines, // Changed to null for unlimited lines
     this.fontSize = 17,
     this.hintTextColor = const Color(0xFF9A9A9A),
     required this.primaryBorderColor,

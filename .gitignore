@@ -1,3 +1,30 @@
+# Environment files
+.env
+.env.*
+
+# Flutter/Dart
+.dart_tool/
+.packages
+pubspec.lock
+build/
+
+# Android/iOS platform
+android/local.properties
+ios/Flutter/Flutter.podspec
+ios/Flutter/Generated.xcconfig
+ios/Flutter/ephemeral/
+ios/Pods/
+
+# macOS/Windows/Linux build
+macos/Flutter/ephemeral/
+linux/flutter/ephemeral/
+windows/flutter/ephemeral/
+
+# IDE
+.idea/
+.vscode/
+*.iml
+**/.DS_Store
 # Miscellaneous
 *.class
 *.log
@@ -43,3 +70,6 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+
+# Keep example env tracked
+!/.env.example
